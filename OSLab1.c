@@ -81,30 +81,30 @@ for ( i = 0; i < m; i++) {
    //}
    // }
 
-   void sumRC(int n, int mat1[n][n]) {
+   void sumRC(int m, int M1[m][m]) {
     int sumr, sumc,i,j;
-    int mat3[n+1][n+2];
+    int mat3[m+1][m+2];
 
 
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < m; i++) {
         sumr = 0;
-        for (j = 0; j < n; j++) {
-            mat3[i][j] = mat1[i][j];
-            sumr += mat1[i][j];
+        for (j = 0; j < m; j++) {
+            mat3[i][j] = M1[i][j];
+            sumr += M1[i][j];
         }
-        mat3[i][n] = sumr;
+        mat3[i][m] = sumr;
     }
 
-    for (j = 0; j < n; j++) {
+    for (j = 0; j < m; j++) {
         sumc = 0;
-        for (i = 0; i < n; i++) {
-            sumc += mat1[i][j];
+        for (i = 0; i < m; i++) {
+            sumc += M1[i][j];
         }
-        mat3[n][j] = sumc;
+        mat3[m][j] = sumc;
     }
-    mat3[n][n]=0;
-    for (int i = 0; i < n+1; i++) {
-        for (int j = 0; j < n+1; j++) {
+    mat3[m][m]=0;
+    for (int i = 0; i < m+1; i++) {
+        for (int j = 0; j < m+1; j++) {
             printf("%d ", mat3[i][j]);
         }
         printf("\n");
